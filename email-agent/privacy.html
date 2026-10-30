@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>email-agent 隱私權政策</title>
+	<style>
+		body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", "Microsoft JhengHei", sans-serif; background: #f5f6f8; color: #1f2328; }
+		main { max-width: 720px; margin: 48px auto; padding: 0 16px; line-height: 1.7; }
+		h2 { margin-top: 32px; font-size: 18px; }
+		.en { color: #6b7280; font-size: 14px; }
+	</style>
+</head>
+<body>
+<main>
+	<h1>email-agent 隱私權政策</h1>
+	<p>最後更新：2026-10-30</p>
+
+	<h2>適用範圍</h2>
+	<p>email-agent 是 Gilbert (aka Fish) 個人自用的郵件代收程式，只用於本人的 Google 帳號與本人的其他信箱，不提供他人使用。</p>
+
+	<h2>存取的 Google 資料</h2>
+	<p>經本人授權後，程式透過 Gmail API（<code>gmail.modify</code> 範圍）執行以下動作：</p>
+	<ul>
+		<li>將從本人其他信箱收到的信件匯入本人的 Gmail。</li>
+		<li>以 Message-ID 搜尋剛匯入的信件，判斷符合哪些篩選器。</li>
+		<li>讀取本人在 Gmail 設定的篩選器，並依其動作新增或移除信件標籤。</li>
+		<li>建立代收用的標籤。</li>
+	</ul>
+	<p>程式不會讀取、分析或匯出 Gmail 中其他既有信件的內容。</p>
+
+	<h2>資料保存</h2>
+	<p>OAuth token 與外部信箱密碼以 AES-256-GCM 加密後，保存在本人自有 NAS 上的資料庫；處理紀錄只保存寄件者、主旨等摘要資訊。
+		資料不會上傳到任何第三方服務，不會出售、分享，也不會用於廣告。</p>
+
+	<h2>Google API 使用聲明</h2>
+	<p>email-agent 對 Google API 所取得資訊的使用與傳輸，遵守
+		<a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>，
+		包含其中的 Limited Use 規定。</p>
+
+	<h2>撤銷授權與刪除資料</h2>
+	<p>可隨時在 <a href="https://myaccount.google.com/permissions">Google 帳戶的第三方存取權</a> 撤銷授權；
+		刪除 NAS 上的程式資料目錄即會移除所有保存的資料。</p>
+
+	<h2>聯絡方式</h2>
+	<p>gugufish@gmail.com</p>
+
+	<hr>
+	<p class="en"><strong>Summary (English):</strong> email-agent is a personal, self-hosted tool used only by its author.
+		With the author's consent it uses the Gmail API (gmail.modify) to import mail from the author's other mailboxes,
+		search the imported messages, read the author's Gmail filters and apply their label actions, and create labels.
+		Tokens and passwords are stored encrypted on the author's own NAS and are never shared with third parties.
+		email-agent's use and transfer of information received from Google APIs adheres to the
+		Google API Services User Data Policy, including the Limited Use requirements.</p>
+</main>
+</body>
+</html>
